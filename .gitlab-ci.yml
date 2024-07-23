@@ -1,0 +1,45 @@
+image: fabianm/comp1110-2024-s1-gitlab-ci:0.1.0
+
+stages:
+  - build
+  - test
+
+before_script:
+  - export PATH_TO_FX=/usr/share/openjfx/lib
+  - export JAVAFX_OPTIONS="--module-path $PATH_TO_FX --add-modules=javafx.controls,javafx.fxml,javafx.media"
+  - export CP=src:comp1110-homework.jar:/shared/junit-platform-console-standalone-1.7.0.jar
+  - export JUNIT="java $JAVAFX_OPTIONS -jar /shared/junit-platform-console-standalone-1.7.0.jar --class-path $CP --disable-banner"
+
+build:
+  tags:
+    - comp1110
+  stage: build
+  script:
+    - javac -encoding ISO-8859-1 $JAVAFX_OPTIONS -cp $CP src/comp1110/homework/*/*.java
+  artifacts:
+    paths:
+      - src/comp1110/homework/*/*.class
+
+J01:
+  tags:
+    - comp1110
+  stage: test
+  script:
+    - $JUNIT -c=comp1110.homework.J01.HelloWorldTest
+    - $JUNIT -c=comp1110.homework.J01.LiteralsTest
+    - $JUNIT -c=comp1110.homework.J01.SquareTest
+  allow_failure: true
+
+J05:
+  tags:
+    - comp1110
+  stage: test
+  script:
+    - $JUNIT -c=comp1110.homework.J05.GradeTest
+    - $JUNIT -c=comp1110.homework.J05.MovieTest
+    - $JUNIT -c=comp1110.homework.J05.OddTest
+  allow_failure: true
+  
+## Local Variables:
+## mode: yaml
+## End:
