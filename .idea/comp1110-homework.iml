@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="comp1110-homework" level="project" />
     <orderEntry type="library" name="JUnit5" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
