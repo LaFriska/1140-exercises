@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="J03" type="JUnit" factoryName="JUnit">
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="pattern" />
+    <option name="PARAMETERS" value="" />
+    <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+    <option name="TEST_SEARCH_SCOPE">
+      <value defaultName="wholeProject" />
+    </option>
+    <patterns>
+      <pattern testClass="comp1110.homework.J03.CountPositiveTest" />
+      <pattern testClass="comp1110.homework.J03.MostAverageTest" />
+      <pattern testClass="comp1110.homework.J03.IsIncreasingTest" />
+      <pattern testClass="comp1110.homework.J03.AllDifferentTest" />
+    </patterns>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
