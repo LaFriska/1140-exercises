@@ -39,6 +39,36 @@ J05:
     - $JUNIT -c=comp1110.homework.J05.MovieTest
     - $JUNIT -c=comp1110.homework.J05.OddTest
   allow_failure: true
+
+J06:
+  tags:
+    - comp1110
+  stage: test
+  script:
+    - $JUNIT -c=comp1110.homework.J06.SquaresTest
+    - $JUNIT -c=comp1110.homework.J06.DigitSumsTest
+    - $JUNIT -c=comp1110.homework.J06.PrimesTest
+  allow_failure: true
+
+J03:
+  tags:
+    - comp1110
+  stage: test
+  script:
+    - $JUNIT -c=comp1110.homework.J03.CountPositiveTest
+    - $JUNIT -c=comp1110.homework.J03.MostAverageTest
+    - $JUNIT -c=comp1110.homework.J03.IsIncreasingTest
+    - $JUNIT -c=comp1110.homework.J03.AllDifferentTest
+  allow_failure: true
+
+O02:
+  tags:
+    - comp1110
+  stage: test
+  script:
+    - $JUNIT -c=comp1110.homework.O02.CoordinateTest
+    - $JUNIT -c=comp1110.homework.O02.BMITest
+  allow_failure: true
   
 ## Local Variables:
 ## mode: yaml
