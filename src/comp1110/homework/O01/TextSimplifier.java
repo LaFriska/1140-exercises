@@ -3,42 +3,39 @@ package comp1110.homework.O01;
 public class TextSimplifier {
 
     static String simplify(String text){
-        StringBuffer sb = new StringBuffer(text);
-        for(int i = 0; i < sb.length(); i++){
-            if(!(sb.charAt(i) == ' ') && !Character.isLetter(sb.charAt(i))) {
-                sb.deleteCharAt(i);
-                i--;
-            }
-        }
-        delete(sb, "the ");
-        delete(sb, "an ");
-        delete(sb, "a ");
-        delete(sb, "The ");
-        delete(sb, "An ");
-        delete(sb, "A ");
-        String temp = sb.toString();
-        System.out.println(temp);
-        for(String word : temp.split(" ")){
-            if(word.length() > 5){
-                int ind = sb.indexOf(word);
-                if(ind != -1)
-                    sb.replace(ind, ind + word.length(), getAbbrev(word));
+        String[] words = text.split("\\s+");
+        StringBuffer sb = new StringBuffer();
+        for(String word : words){
+            String simplified = simplifyWord(word);
+            if(!simplified.isEmpty()){
+                if(!sb.isEmpty()){
+                    sb.append(" ");
+                }
+                sb.append(simplifyWord(word));
             }
         }
         return sb.toString();
     }
 
-    static String getAbbrev(String word){
-        if(word.length() <= 5) return word;
-        return word.substring(0, 3) + word.charAt(word.length() - 1);
+    static String simplifyWord(String word){
+        word = deleteBadChars(word);
+        if(word.equalsIgnoreCase("an") || word.equalsIgnoreCase("the") || word.equalsIgnoreCase("a")) return "";
+        if(word.length() > 5) return shortenWord(word);
+        return word;
     }
 
-    static void delete(StringBuffer sb, String word){
-        int index = sb.indexOf(word);
-        while(index != -1){
-            sb.replace(index, index + word.length(), "");
-            index = sb.indexOf(word);
+    static String deleteBadChars(String word){
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            if(Character.isLetter(c)) sb.append(c);
         }
+        return sb.toString();
+    }
+
+    static String shortenWord(String word){
+        if(word.length() <= 5) return word;
+        return word.substring(0, 3) + word.charAt(word.length() - 1);
     }
 
     public static void main(String[] args) {
