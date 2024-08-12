@@ -1,7 +1,6 @@
 package comp1110.homework.J05;
 
 public class Grade {
-
     static void printGrade(int mark){
         if(mark < 0 || mark > 100) System.out.println("Bad mark");
         else if(mark <= 49) System.out.println("N");
@@ -10,5 +9,4 @@ public class Grade {
         else if(mark <= 79) System.out.println("D");
         else System.out.println("HD");
     }
-
 }
