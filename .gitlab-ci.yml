@@ -66,8 +66,19 @@ O02:
     - comp1110
   stage: test
   script:
-    - $JUNIT -c=comp1110.homework.O02.CoordinateTest
     - $JUNIT -c=comp1110.homework.O02.BMITest
+    - $JUNIT -c=comp1110.homework.O02.CoordinateTest
+    - $JUNIT -c=comp1110.homework.O02.PathTest
+    - $JUNIT -c=comp1110.homework.O02.SpanTest
+  allow_failure: true
+
+O04:
+  tags:
+    - comp1110
+  stage: test
+  script:
+    - $JUNIT -c=comp1110.homework.O04.ExpressionTest
+    - $JUNIT -c=comp1110.homework.O04.ShapeTest
   allow_failure: true
   
 ## Local Variables:
