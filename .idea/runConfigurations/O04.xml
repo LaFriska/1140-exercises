@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="O02" type="JUnit" factoryName="JUnit">
+  <configuration default="false" name="O04" type="JUnit" factoryName="JUnit">
     <option name="MAIN_CLASS_NAME" value="" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="pattern" />
@@ -9,10 +9,8 @@
       <value defaultName="wholeProject" />
     </option>
     <patterns>
-      <pattern testClass="comp1110.homework.O02.CoordinateTest" />
-      <pattern testClass="comp1110.homework.O02.BMITest" />
-      <pattern testClass="comp1110.homework.O02.PathTest" />
-      <pattern testClass="comp1110.homework.O02.SpanTest" />
+      <pattern testClass="comp1110.homework.O04.ExpressionTest" />
+      <pattern testClass="comp1110.homework.O04.ShapeTest" />
     </patterns>
     <method v="2">
       <option name="Make" enabled="true" />
