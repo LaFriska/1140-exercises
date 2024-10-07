@@ -27,8 +27,15 @@ class Constant extends Expression {
     }
 
     // add override implementations
+    @Override
     public int evaluate() {
-        return 0;
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Constant)) return false;
+        return ((Constant) obj).value == value;
     }
 }
 
@@ -41,13 +48,23 @@ class Operator extends Expression {
      * Note: the operator type must be one of the characters '+' or '*'.
      */
     Operator(char type, Expression left, Expression right) {
-	this.opType = type;
-	this.left = left;
-	this.right = right;
+        this.opType = type;
+        this.left = left;
+        this.right = right;
     }
 
     // add override implementations
+    @Override
     public int evaluate() {
-        return 0;
+        return opType == '+' ? left.evaluate() + right.evaluate()
+                             : left.evaluate() * right.evaluate();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Operator)) return false;
+        Operator op = (Operator) obj;
+        if(op.opType != opType) return false;
+        return left == op.left && right == op.right;
     }
 }
