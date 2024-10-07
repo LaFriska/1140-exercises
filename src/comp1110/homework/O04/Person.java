@@ -2,12 +2,12 @@ package comp1110.homework.O04;
 
 public class Person {
 
-    public static float pi = 3.14f;
-
     //FIELDS
 
-    public String name;
+    public String name = "Mary";
     private float height;
+
+    String variable = new String();
 
     public Person(String name, float height){
         this.name = name;
@@ -17,6 +17,8 @@ public class Person {
     //METHODS
 
     public void talk(String name){
+        String variable = new String();
+        this.variable = "hi";
         System.out.println(this.name + " says hello to " + name);
     }
 
@@ -26,7 +28,19 @@ public class Person {
         System.out.println(john.name);
         john.talk("Jack");
 
+
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
